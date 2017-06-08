@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Template Test</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <header>
+      <h1>My Contacts</h1>
+    </header>    
+    <article>
+      <section id="contactEntry">
+        <form id="addContact" method="post">
+          <label for="name">Name</label>
+          <input id="name" type="text">
+          <label for="phone">Phone</label>
+          <input id="phone" type="tel">
+          <input id="submit" type="submit" value="Submit">
+          <input id="cancel" type="button" value="Cancel">
+        </form>
+      </section>
+      <section id="contacts" class="hide">
+        <input id="addNewItem" type="button" value="Add New Item">
+        <table>
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Phone Number</th>
+              <th><!-- Actions --></th>
+            </tr>
+          </thead>
+          <tbody id="contact-tbody">
+          </tbody>
+        </table>
+      </section>
+
+      <h1>Template Test</h1>
+      <button id="hello-button" type="button">Show Hello</button>
+      <button id="name-button" type="button">Show Name</button>
+      <div id="main"></div>
+    </article>
+    <footer>
+      <p>HTML5-300 B Assignment 8, Copyright <i class="fa fa-copyright" aria-hidden="true"></i> 2017 Andelin Enterprises Inc.</p>
+    </footer>
+    <script id="hello-template" type="text/x-handlebars-template">
+      Hello {{name}}!
+    </script>
+    <script id="name-template" type="text/x-handlebars-template">
+      {{name.first}} {{name.last}}
+    </script>
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/handlebars-v4.0.10.js"></script>
+    <script src="js/manageContacts.js"></script>
+    <script src="js/templates.js"></script>
+  </body>
+</html>
