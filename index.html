@@ -7,21 +7,27 @@
   </head>
   <body>
     <header>
-      <h1>My Contacts (with Templates)</h1>
+      <h1>My Contacts (using Templates)</h1>
     </header>    
     <article>
-      <section id="contactEntry">
-        <form id="addContact" method="post">
+      <input id="addNewItem" type="button" value="Add New Item">
+      <div id="contactsTableDiv"></div>
+      <div id="contactFormDiv"></div>
+    </article>
+    <footer>
+      <p>HTML5-300 B Assignment 8, Copyright <i class="fa fa-copyright" aria-hidden="true"></i> 2017 Andelin Enterprises Inc.</p>
+    </footer>
+    <script id="contactFormTemplate" type="text/x-handlebars-template">
+        <form method="post">
           <label for="name">Name</label>
-          <input id="name" type="text">
+          <input id="name" type="text" value="{{name}}">
           <label for="phone">Phone</label>
-          <input id="phone" type="tel">
-          <input id="submit" type="submit" value="Submit">
-          <input id="cancel" type="button" value="Cancel">
+          <input id="phone" type="tel" value="{{phone}}">
+          <input id="submitContact" type="submit" value="Submit">
+          <input id="cancelContact" type="button" value="Cancel">
         </form>
-      </section>
-      <section id="contacts" class="hide">
-        <input id="addNewItem" type="button" value="Add New Item">
+    </script>
+    <script id="contactsTableTemplate" type="text/x-handlebars-template">
         <table>
           <thead>
             <tr>
@@ -31,26 +37,19 @@
             </tr>
           </thead>
           <tbody id="contact-tbody">
+            {{#each contacts}}
+              <tr data-id="{{id}}">
+                <td>{{name}}</td>
+                <td>{{phone}}</td>
+                <td><button type="button" class="edit">Edit</button></td>
+                <td><button type="button" class="delete">Delete</button></td>
+              </tr>
+            {{/each}}
           </tbody>
         </table>
-      </section>
-
-      <button id="hello-button" type="button">Show Hello</button>
-      <button id="name-button" type="button">Show Name</button>
-      <div id="main"></div>
-    </article>
-    <footer>
-      <p>HTML5-300 B Assignment 8, Copyright <i class="fa fa-copyright" aria-hidden="true"></i> 2017 Andelin Enterprises Inc.</p>
-    </footer>
-    <script id="hello-template" type="text/x-handlebars-template">
-      Hello {{name}}!
-    </script>
-    <script id="name-template" type="text/x-handlebars-template">
-      {{name.first}} {{name.last}}
     </script>
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/handlebars-v4.0.10.js"></script>
     <script src="js/manageContacts.js"></script>
-    <script src="js/templates.js"></script>
   </body>
 </html>

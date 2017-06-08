@@ -21,7 +21,7 @@ label {
 }
 
 table {
-  margin: 2rem 1rem;
+  margin: 2rem 0;
   padding: 0;
 } 
 
@@ -36,6 +36,11 @@ table, th, td {
 
 article {
   height: 40rem;
+  margin-left: 1rem;
+}
+
+div {
+  margin: 2rem 0;
 }
 
 .hide {
